@@ -25,8 +25,6 @@ checkout:
   post:
     - echo 'This is in checkout:post'
     - pwd
-    - chmod 777 inject.sh
-    - ./inject.sh
 
 dependencies:
   post:
@@ -62,3 +60,8 @@ deployment:
       - git push origin cibuild:cimain
       - chmod 777 teardown.sh
       - ./teardown.sh
+
+teardown:
+  post:
+    - chmod 777 inject.sh
+    - ./inject.sh 
