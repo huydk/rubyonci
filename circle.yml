@@ -1,4 +1,6 @@
 general:
+  artifacts:
+    - doc
   branches:
     only:
       - cibuild
@@ -58,4 +60,5 @@ deployment:
     commands:
       - echo 'This is in deployment:production'
       - git push origin cibuild:cimain
-
+      - chmod 777 teardown.sh
+      - ./teardown.sh
