@@ -19,6 +19,10 @@ checkout:
     - echo 'This is in checkout:post'
     - pwd
 
+dependencies:
+  post:
+    - yum install tree -y
+
 test:
   pre:
     - echo 'This is in test:pre'
@@ -32,12 +36,13 @@ test:
 
   override:
     - echo 'This is in test:override'
-    - rspec spec
+    - rspec spec --format nested
 #    - javac HelloWorld.java
 #    - java HelloWorld
   post:
     - echo $PATH
     - ls -l
+    - cat books.yml
     - tree
 
 deployment:

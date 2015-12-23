@@ -20,7 +20,6 @@ describe "Library object" do
   end
 
   describe "#new" do
- 
     context "with no parameters" do
       it "has no books" do
         lib = Library.new
