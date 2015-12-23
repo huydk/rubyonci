@@ -30,7 +30,7 @@ describe "Library object" do
     context "with a yaml file parameter" do
       it "has five books" do
         #@lib.should have(5).books
-        @lib.books.length.should == 5
+        expect(@lib.books.length).to eq(5)
       end
     end
   end
@@ -41,7 +41,7 @@ describe "Library object" do
  
   it "accepts new books" do
     @lib.add_book( Book.new("Designing for the Web", "Mark Boulton", :design) )
-    @lib.get_book("Designing for the Web").should be_an_instance_of Book
+    expect(@lib.get_book("Designing for the Web")).to be_a Book
   end
  
   it "saves the library" do
@@ -49,6 +49,6 @@ describe "Library object" do
     @lib.save
     lib2 = Library.new "books.yml"
     books2 = lib2.books.map { |book| book.title }
-    books.should eql books2
+    expect(books).to eql books2
   end
 end
