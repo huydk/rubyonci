@@ -15,7 +15,7 @@ describe Book do
   describe "#title" do
     it "returns the correct title" do
 #      @book.title.should eql "Title"
-      expect(@book).to eql "Title"
+      expect(@book.title).to eql "Title"
     end
   end
   describe "#author" do

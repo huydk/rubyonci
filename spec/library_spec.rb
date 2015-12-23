@@ -24,7 +24,7 @@ describe "Library object" do
       it "has no books" do
         lib = Library.new
         #lib.should have(0).books
-        lib.books.length.should == 0
+        expect(lib.books.length).to eq(0)
       end
     end
     context "with a yaml file parameter" do
@@ -36,7 +36,7 @@ describe "Library object" do
   end
   
   it "returns all the books in a given category" do
-    @lib.get_books_in_category(:development).length.should == 2
+    expect(@lib.get_books_in_category(:development).length).to eq(2)
   end
  
   it "accepts new books" do
