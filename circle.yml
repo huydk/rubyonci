@@ -1,0 +1,45 @@
+general:
+  branches:
+    only:
+      - cibuild
+
+machine:
+  java:
+    version: oraclejdk8
+
+#Because we don't read circle.yml until after the checkout phase, 
+#only post is supported in this section.
+checkout:
+  pre:
+    - echo 'This is in checkout:pre'
+    - pwd
+  post:
+    - echo 'This is in checkout:post'
+    - pwd
+
+test:
+  pre:
+    - echo 'This is in test:pre'
+    - pwd
+    - ls -ls
+# 
+    - git branch -a
+    - git remote -v
+    - git config --global user.email "huydk@gmail.com"
+    - git config --global user.name "Huy Nguyen"
+
+  override:
+    - echo 'This is in test:override'
+#    - javac HelloWorld.java
+#    - java HelloWorld
+  post:
+    - echo $PATH
+
+deployment:
+  production:
+    branch: cibuild
+    commands:
+      - echo 'This is in deployment:production'
+#      - git pull origin cimain
+#      - git push origin cibuild:cimain
+
