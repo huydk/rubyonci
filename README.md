@@ -1,6 +1,6 @@
 this is rubyonci repo for testing ci again ruby
 
-Use rspec v.2+ api or warning will be fired
+Use rspec v.2+ api or warning will be fired!!!
 
 -
 Problem:
