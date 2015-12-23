@@ -9,3 +9,5 @@ cd ..
 
 rm -rf rubyonci
 
+pwd
+ls -lsa

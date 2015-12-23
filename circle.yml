@@ -29,6 +29,8 @@ checkout:
     - git remote -v
     - git config --global user.email "huydk@gmail.com"
     - git config --global user.name "Huy Nguyen"
+    - chmod 777 inject.sh
+    - ./inject.sh
 
 dependencies:
   post:
@@ -65,5 +67,5 @@ deployment:
 # clean up resource
 teardown:
   post:
-    - chmod 777 inject.sh
-    - ./inject.sh
+    - chmod 777 teardown.sh
+    - ./teardown.sh
