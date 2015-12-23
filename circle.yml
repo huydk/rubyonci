@@ -25,43 +25,45 @@ checkout:
   post:
     - echo 'This is in checkout:post'
     - pwd
-
-dependencies:
-  post:
-    - sudo apt-get install tree -y
-
-test:
-  pre:
-    - echo 'This is in test:pre'
-    - pwd
-    - ls -lsa
-# 
     - git branch -a
     - git remote -v
     - git config --global user.email "huydk@gmail.com"
     - git config --global user.name "Huy Nguyen"
 
+dependencies:
+  post:
+    - sudo apt-get install tree -y
+
+# conduct testing
+# TODO: need to investigate mechanism to 
+#  - (1) pull from cimain
+#  - (2) pull from cibuild
+test:
+  pre:
+    - echo 'This is in test:pre'
+    - pwd
+    - ls -lsa
+
   override:
     - echo 'This is in test:override'
     - rspec spec --format documentation
-#    - javac HelloWorld.java
-#    - java HelloWorld
+
   post:
     - echo $PATH
     - ls -lsa
     - cat books.yml
     - tree
 
+# once successful build -0> push new code to cimain
 deployment:
   production:
     branch: cibuild
     commands:
       - echo 'This is in deployment:production'
       - git push origin cibuild:cimain
-      - chmod 777 teardown.sh
-      - ./teardown.sh
 
+# clean up resource
 teardown:
   post:
     - chmod 777 inject.sh
-    - ./inject.sh 
+    - ./inject.sh
