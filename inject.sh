@@ -3,7 +3,7 @@ set -x
 
 # show current directory and list up all files
 pwd
-ls -la
+ls -lsa
 
-$PATH
+echo $PATH
 

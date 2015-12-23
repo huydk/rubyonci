@@ -15,9 +15,11 @@ checkout:
   pre:
     - echo 'This is in checkout:pre'
     - pwd
+    - ls -lsa
   override:
     - echo 'This is in checkout:override'
     - pwd
+    - ls -lsa
   post:
     - echo 'This is in checkout:post'
     - pwd
@@ -32,7 +34,7 @@ test:
   pre:
     - echo 'This is in test:pre'
     - pwd
-    - ls -ls
+    - ls -lsa
 # 
     - git branch -a
     - git remote -v
@@ -46,7 +48,7 @@ test:
 #    - java HelloWorld
   post:
     - echo $PATH
-    - ls -l
+    - ls -lsa
     - cat books.yml
     - tree
 
