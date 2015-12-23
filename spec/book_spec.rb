@@ -14,17 +14,20 @@ describe Book do
 
   describe "#title" do
     it "returns the correct title" do
-      @book.title.should eql "Title"
+#      @book.title.should eql "Title"
+      expect(@book).to eql "Title"
     end
   end
   describe "#author" do
     it "returns the correct author" do
-      @book.author.should eql "Author"
+#      @book.author.should eql "Author"
+      expect(@book.author).to eql "Author"
     end
   end
   describe "#category" do
     it "returns the correct category" do
-      @book.category.should eql :category
+#      @book.category.should eql :category
+      expect(@book.category).to eql :category
     end
   end
 end
