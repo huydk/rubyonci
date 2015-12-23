@@ -37,6 +37,8 @@ test:
 #    - java HelloWorld
   post:
     - echo $PATH
+    - ls -l
+    - tree
 
 deployment:
   production:

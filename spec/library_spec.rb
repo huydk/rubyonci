@@ -11,7 +11,7 @@ describe "Library object" do
       Book.new("Responsive Web Design", "Ethan Marcotte", :design)
     ]
     File.open "books.yml", "w" do |f|
-       f.write YAML::dump lib_obj
+      f.write YAML::dump lib_obj
     end
   end
  
@@ -22,15 +22,15 @@ describe "Library object" do
   describe "#new" do
  
     context "with no parameters" do
-        it "has no books" do
-            lib = Library.new
-            lib.should have(0).books
-        end
+      it "has no books" do
+        lib = Library.new
+        lib.should have(0).books
+      end
     end
     context "with a yaml file parameter" do
-        it "has five books" do
-            @lib.should have(5).books
-        end
+      it "has five books" do
+        @lib.should have(5).books
+      end
     end
   end
   
