@@ -23,7 +23,8 @@ describe "Library object" do
     context "with no parameters" do
       it "has no books" do
         lib = Library.new
-        lib.should have(0).books
+        #lib.should have(0).books
+        lib.books.length.should == 5
       end
     end
     context "with a yaml file parameter" do

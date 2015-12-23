@@ -36,7 +36,7 @@ test:
 
   override:
     - echo 'This is in test:override'
-    - rspec spec --format nested
+    - rspec spec --format documentation
 #    - javac HelloWorld.java
 #    - java HelloWorld
   post:
