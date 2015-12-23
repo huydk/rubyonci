@@ -6,7 +6,7 @@ general:
 machine:
   java:
     version: oraclejdk8
-  ruby:.
+  ruby:
     version: 2.1.2
 
 #Because we don't read circle.yml until after the checkout phase, 
