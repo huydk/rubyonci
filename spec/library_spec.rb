@@ -24,12 +24,13 @@ describe "Library object" do
       it "has no books" do
         lib = Library.new
         #lib.should have(0).books
-        lib.books.length.should == 5
+        lib.books.length.should == 0
       end
     end
     context "with a yaml file parameter" do
       it "has five books" do
-        @lib.should have(5).books
+        #@lib.should have(5).books
+        @lib.books.length.should == 5
       end
     end
   end
