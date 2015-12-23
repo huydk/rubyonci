@@ -44,5 +44,5 @@ deployment:
     commands:
       - echo 'This is in deployment:production'
 #      - git pull origin cimain
-#      - git push origin cibuild:cimain
+      - git push origin cibuild:cimain
 
