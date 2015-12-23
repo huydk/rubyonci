@@ -6,6 +6,8 @@ general:
 machine:
   java:
     version: oraclejdk8
+  ruby:.
+    version: 2.1.2
 
 #Because we don't read circle.yml until after the checkout phase, 
 #only post is supported in this section.
@@ -30,6 +32,7 @@ test:
 
   override:
     - echo 'This is in test:override'
+    - rspec spec
 #    - javac HelloWorld.java
 #    - java HelloWorld
   post:
