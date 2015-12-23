@@ -1,6 +1,6 @@
 this is rubyonci repo for testing ci again ruby
 
----
+-
 Problem:
 
 $ git push origin cibuild:cimain
@@ -15,7 +15,8 @@ Please make sure you have the correct access rights
 git push origin cibuild:cimain returned exit code 128
 
 and the repository exists. Action failed: git push origin cibuild:cimain
----
+
+-
 Troubleshoot:
 
 1. On CircleCI project > Project Settings > Checkout SSH keys
@@ -26,6 +27,5 @@ Troubleshoot:
 
 4. Rebuild job
 
----
-
+-
 
