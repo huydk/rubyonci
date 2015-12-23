@@ -17,6 +17,7 @@ checkout:
     - pwd
   override:
     - echo 'This is in checkout:override'
+    - pwd
   post:
     - echo 'This is in checkout:post'
     - pwd

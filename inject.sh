@@ -5,5 +5,5 @@ set -x
 pwd
 ls -la
 
-echo $PATH
+$PATH
 
