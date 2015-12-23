@@ -21,7 +21,7 @@ checkout:
 
 dependencies:
   post:
-    - yum install tree -y
+    - sudo apt-get install tree -y
 
 test:
   pre:
